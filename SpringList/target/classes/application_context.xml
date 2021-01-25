@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="fruitApple" class="fruits.Fruits">
+        <property name="fruit" value="Apple"/>
+        <property name="countryOfOrigin" value="Russia"/>
+        <property name="forSale" value="true"/>
+    </bean>
+    <bean id="fruitOrange" class="fruits.Fruits">
+        <property name="fruit" value="Orange"/>
+        <property name="countryOfOrigin" value="Marocco"/>
+        <property name="forSale" value="true"/>
+    </bean>
+    <bean id="fruitBanan" class="fruits.Fruits">
+        <property name="fruit" value="Banan"/>
+        <property name="countryOfOrigin" value="Ecuador"/>
+        <property name="forSale" value="false"/>
+    </bean>
+
+    <util:list id="fruitsList" scope="singleton" list-class="java.util.ArrayList">
+        <ref bean="fruitApple"/>
+        <ref bean="fruitOrange"/>
+        <ref bean="fruitBanan"/>
+    </util:list>
+
+    <bean id="vegetablePotato" class="vegitables.Vegetables">
+        <property name="vegetable" value="Potato"/>
+        <property name="countryOfOrigin" value="Poland"/>
+        <property name="forSale" value="false"/>
+    </bean>
+    <bean id="vegetableTomat" class="vegitables.Vegetables">
+        <property name="vegetable" value="Tomat"/>
+        <property name="countryOfOrigin" value="Egypt"/>
+        <property name="forSale" value="false"/>
+    </bean>
+    <bean id="vegetableCucumber" class="vegitables.Vegetables">
+        <property name="vegetable" value="Cucumber"/>
+        <property name="countryOfOrigin" value="Ukraine"/>
+        <property name="forSale" value="true"/>
+    </bean>
+
+    <util:list id="vegetablesList" scope="singleton" list-class="java.util.ArrayList">
+        <ref bean="vegetablePotato"/>
+        <ref bean="vegetableTomat"/>
+        <ref bean="vegetableCucumber"/>
+    </util:list>
+
+    <util:map id="samsung" key-type="java.lang.String" value-type="java.lang.String" map-class="java.util.HashMap">
+        <entry key="model" value="Samsung" />
+        <entry key="countryOfOrigin" value="Japan" />
+        <entry key="forSale" value="true" />
+    </util:map>
+
+    <util:map id="lg" key-type="java.lang.String" value-type="java.lang.String" map-class="java.util.HashMap">
+        <entry key="model" value="LG" />
+        <entry key="countryOfOrigin" value="Korea" />
+        <entry key="forSale" value="true" />
+    </util:map>
+
+    <util:map id="panasonic" key-type="java.lang.String" value-type="java.lang.String" map-class="java.util.HashMap">
+        <entry key="model" value="Panasonic" />
+        <entry key="countryOfOrigin" value="China" />
+        <entry key="forSale" value="true" />
+    </util:map>
+
+</beans>
